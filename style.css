@@ -1,0 +1,110 @@
+body {
+  font-family: 'Comic Sans MS', cursive;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+#login, #main {
+  position: relative;
+  z-index: 2;
+  margin-top: 50px;
+  animation: fadeIn 1.5s ease;
+}
+
+input, select, textarea, button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+}
+
+textarea {
+  width: 300px;
+  height: 100px;
+}
+
+button {
+  background-color: pink;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#thankYou {
+  font-size: 24px;
+  animation: popHeart 1s infinite;
+  color: white;
+}
+
+@keyframes popHeart {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#starContainer {
+  font-size: 40px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.star {
+  transition: color 0.3s;
+}
+
+.star:hover,
+.star:hover ~ .star,
+.star.selected,
+.star.selected ~ .star {
+  color: gold;
+}
+
+#emojiThankYou {
+  margin-top: 20px;
+  font-size: 30px;
+  animation: popIn 1s ease forwards;
+  opacity: 0;
+  transform: scale(0.5);
+  color: white;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Mood-based background colors */
+body.happy {
+  background: linear-gradient(to top right, #f9f3e3, #ffe4e1);
+}
+
+body.sad {
+  background: linear-gradient(to top right, #3a3a98, #1f1f52);
+}
+
+body.excited {
+  background: linear-gradient(to top right, #ffecb3, #ff4081);
+}
+
+body.angry {
+  background: linear-gradient(to top right, #4d0000, #8b0000);
+}
+
+body.default {
+  background: #111;
+}
+
+/* Glow effect on login only */
+body.login-glow canvas {
+  filter: drop-shadow(0 0 6px white);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sevak at Service 💌</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <script defer src="heart-bg.js"></script>
+</head>
+<body>
+  <canvas id="heartCanvas"></canvas>
+
+  <div id="login">
+    <h1>Welcome, My Mam 💖</h1>
+    <input type="password" id="password" placeholder="Enter the magic word 💬" />
+    <button onclick="checkPassword()">Unlock</button>
+  </div>
+
+  <div id="main" style="display: none;">
+    <h2>KAISA RAHA AAPKA DIN?</h2>
+    <select id="moodSelector" onchange="changeMood()">
+      <option value="">-- Select Mood --</option>
+      <option value="happy">😊 Happy</option>
+      <option value="sad">😢 Sad</option>
+      <option value="excited">🥳 Excited</option>
+      <option value="angry">😡 Angry</option>
+    </select>
+
+    <div id="customMessage"></div>
+    <textarea placeholder="What do you want me to do for you?" id="orderText"></textarea>
+    <button onclick="submitOrder()">Submit</button>
+
+    <div id="thankYou" style="display:none;">🤍 Thank you! Your order has been received!</div>
+
+    <div id="rating" style="display:none;">
+      <h3>Rate the experience 💕</h3>
+      <div id="starContainer">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <div id="emojiThankYou" style="display: none;">🤍 Love you, KUCCHUPUUCHU!</div>
+    </div>
+  </div>
+</body>
+</html>
